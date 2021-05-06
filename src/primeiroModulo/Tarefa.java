@@ -1,12 +1,12 @@
 package primeiroModulo;
 
-public class Tarefas {
+public class Tarefa {
 	// criar um método para criar uma lista de tarefas. Métodos são comportamentos.
 	
 	String descricao;
 	
 	// aqui criremos o contrutor, toda classe tem um construtor e nesse caso, queremos que receba a descricao como argumento.
-	public Tarefas(String descricao) {
+	public Tarefa(String descricao) {
 		this.descricao = descricao;
 	}
 
