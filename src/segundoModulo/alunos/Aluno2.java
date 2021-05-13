@@ -1,7 +1,8 @@
 package segundoModulo.alunos;
 
-public class Aluno {
+public class Aluno2 {
 	
+	// aqui as variáveis apenas foram declarads
 	private String login;
 	
 	private String cpf;
@@ -9,23 +10,28 @@ public class Aluno {
 	private String nome;
 	
 	// construtor
-	public Aluno (String login, String cpf, String nome) {
+	public Aluno2 (String login, String cpf, String nome) {
+		// é interessante setar aqui, pois já garanto que esses itens sempre serão setados e validados.
+		// e como inseriru um clonstrutor com parametros, tenho que chamar essa classe lá em Main, com os parametros
 		setLogin(login);
 		setCpf(cpf);
 		setNome(nome);
+//		this.login = login;
+//		this.cpf = cpf;
+//		this.nome = nome;
 	}
 	
-
+	// get e set  são os métodos de acesso aos atributos
 	public String getLogin() {
 		return login;
 	}
 	
-	// tratando erros - exceptions
-	public void setLogin(String login) throws Exception {
+	public void setLogin(String login) {
+		// e agora, antes de setar, posso passar minha validação
 		if (validateLogin(login)) {
 			this.login = login;	
 		} else {
-			throw new Exception();
+			System.out.println("Login inválido");
 		}
 	}
 	
@@ -49,6 +55,7 @@ public class Aluno {
 		this.nome = nome;
 	}
 	
+	// após encapsular, posso criar meu método
 	private boolean validateLogin(String login) {
 		return login != null && !login.isEmpty() && login.length() >3 && login.length() < 20;
 	}
@@ -57,6 +64,7 @@ public class Aluno {
 		return cpf != null && !cpf.isEmpty() && (cpf.length() == 11 || cpf.length() == 14);
 	}
 	
+	// reescreverndo o método toString para que imprima os dados corretos
 	@Override
 	public String toString() {
 		return "Nome: " + nome + ", CPF: " + cpf + ", Login: " + login;
