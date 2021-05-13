@@ -23,7 +23,7 @@ public class Tarefa {
 //	modificadores de acesso:
 //	public -> não há restrição e posso acessar de qq lugar
 //	default (void) -> só pode acessar determinada informação estando no mesmo pacote.
-// void -> tipode retorno do seu método, pode retornar nada como acima
+// void -> tipo de retorno do seu método, pode retornar nada como acima
 //	protected -> só pode ser acessado através de herança (acessar da classe filha um valor que tem na classe pai).
 //	private -> só pode ser acessado da mesma classe
 }

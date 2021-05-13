@@ -1,5 +1,6 @@
 package segundoModulo;
 
-public class Aula2 {
+public class Main {
 
+	
 }
