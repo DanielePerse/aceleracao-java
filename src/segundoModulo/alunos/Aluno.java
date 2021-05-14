@@ -1,65 +1,22 @@
 package segundoModulo.alunos;
 
-public class Aluno {
-	
-	private String login;
-	
-	private String cpf;
-	
-	private String nome;
-	
-	// construtor
-	public Aluno (String login, String cpf, String nome) throws ValidationException {
-		setLogin(login);
-		setCpf(cpf);
-		setNome(nome);
-	}
-	
+import segundoModulo.Usuario;
 
-	public String getLogin() {
-		return login;
+public class Aluno extends Usuario{
+	
+	private Integer numeroMatricula;
+
+	// se ususario tem um contrutor com argumentos, preciso escrever um constructor aqui tb, mas se não tivesse argumentos, não precisaria
+	public Aluno(String login, String cpf, String nome) throws ValidationException {
+		super(login, cpf, nome);
 	}
 	
-	// tratando erros - exceptions
-	public void setLogin(String login) throws ValidationException {
-		if (validateLogin(login)) {
-			this.login = login;	
-		} else {
-			throw new ValidationException("Login inválido");
-		}
+	public Integer getNumeroMatricula() {
+		return numeroMatricula;
 	}
 	
-	public String getCpf() {
-		return cpf;
+	public void setNumeroMatricula(Integer numeroMatricula) {
+		this.numeroMatricula = numeroMatricula;
 	}
-	
-	public void setCpf(String cpf) throws ValidationException {
-		if (validateCpf(cpf)) {
-			this.cpf = cpf;	
-		} else {
-			throw new ValidationException("Cpf inválido");
-		}
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	private boolean validateLogin(String login) {
-		return login != null && !login.isEmpty() && login.length() >3 && login.length() < 20;
-	}
-	
-	private boolean validateCpf(String cpf) {
-		return cpf != null && !cpf.isEmpty() && (cpf.length() == 11 || cpf.length() == 14);
-	}
-	
-	@Override
-	public String toString() {
-		return "Nome: " + nome + ", CPF: " + cpf + ", Login: " + login;
- 	}
 	
 }
