@@ -9,7 +9,7 @@ public class Aluno {
 	private String nome;
 	
 	// construtor
-	public Aluno (String login, String cpf, String nome) {
+	public Aluno (String login, String cpf, String nome) throws ValidationException {
 		setLogin(login);
 		setCpf(cpf);
 		setNome(nome);
@@ -21,11 +21,11 @@ public class Aluno {
 	}
 	
 	// tratando erros - exceptions
-	public void setLogin(String login) throws Exception {
+	public void setLogin(String login) throws ValidationException {
 		if (validateLogin(login)) {
 			this.login = login;	
 		} else {
-			throw new Exception();
+			throw new ValidationException("Login inválido");
 		}
 	}
 	
@@ -33,11 +33,11 @@ public class Aluno {
 		return cpf;
 	}
 	
-	public void setCpf(String cpf) {
+	public void setCpf(String cpf) throws ValidationException {
 		if (validateCpf(cpf)) {
 			this.cpf = cpf;	
 		} else {
-			System.out.println("Cpf inválido");
+			throw new ValidationException("Cpf inválido");
 		}
 	}
 	
