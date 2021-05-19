@@ -9,6 +9,8 @@ public class LancadorNotas {
 		
 		if (temAut) {
 			System.out.println("Usuario tem autorização");
+		} else {
+			System.out.println("Não possui autorização");
 		}
 	}
 }
