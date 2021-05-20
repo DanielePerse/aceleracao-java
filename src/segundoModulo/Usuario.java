@@ -1,7 +1,9 @@
 package segundoModulo;
 
 import segundoModulo.alunos.ValidationException;
+import segundoModulo.relatorios.Coluna;
 
+// aqui uso a annotation para montar meu relatório
 public class Usuario {
 	
 	private String login;
@@ -16,6 +18,7 @@ public class Usuario {
 		setNome(nome);
 	}
 	
+	@Coluna(posicao = 1, titulo = "LOGIN")
 	public String getLogin() {
 		return login;
 	}
@@ -28,6 +31,7 @@ public class Usuario {
 		}
 	}
 	
+	@Coluna(posicao = 2, titulo = "CPF")
 	public String getCpf() {
 		return cpf;
 	}
@@ -40,6 +44,7 @@ public class Usuario {
 		}
 	}
 	
+	@Coluna(posicao = 3, titulo = "NOME")
 	public String getNome() {
 		return nome;
 	}
