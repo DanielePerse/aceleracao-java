@@ -9,7 +9,7 @@ import segundoModulo.relatorios.Coluna;
 
 // como usuario autorizável já estende usuário, basta chamar direto ele.
 public class Diretor extends UsuarioAutorizavel{
-	
+	@Coluna(posicao = 4, titulo = "Data do cargo")
 	private String dataCargo;
 
 	@Coluna(posicao = 4, titulo = "Data do cargo")
