@@ -17,3 +17,5 @@
 :heavy_check_mark: Aula 8: Modelagem SQL;
 
 :heavy_check_mark: Aula 9: Hibernate JPA;
+
+:heavy_check_mark: Desafios: Criando Entidades de Banco de Dados em Java;
